@@ -37,6 +37,6 @@ Q1 1990 to Q2 2025 (142 observations)
     - It shows the limitations of AR since it cannot predict sudden surges
           - Forecast settles into drift as the AR effect slowly fades
 - I used the root mean squared error and the mean absolute percentage error to measure how my predictions fared in comparison to naive prediction
-    - My results were better than naive prediction
-          - forecast RMSE and MAPE: 19.11 and 6.60%
-          - naive RMSE and MAPE: 24.83 and 8.72%
+        - forecast RMSE and MAPE: 19.11 and 6.60%
+        - naive RMSE and MAPE: 24.83 and 8.72%
+- My results were better than naive prediction
