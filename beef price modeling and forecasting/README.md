@@ -18,11 +18,11 @@ Q1 1990 to Q2 2025 (142 observations)
 - The model is visually stationary and I confirm with an ADF test to determine if it is stationary, which it is
 - ACF only has one significant spike at lag 5
     - auto.arima function on R recommends ARMA(5,2)
-- I use AIC to determine which model between AR(5) restricted and ARIMA(5,1,2) get penalized the least
-    - AR(5) restricted got punished the least
-          - AIC(AR5_r): -375.9539
-          - AIC(ARMA52): -372.5335
-          - AIC(MA2): -359.8856
+- I use AIC to determine which model between AR(5) restricted and ARIMA(5,1,2) get penalized the least; tested for MA(2) for thoroughness
+    - AIC(AR5_r): -375.9539
+    - AIC(ARMA52): -372.5335
+    - AIC(MA2): -359.8856
+- AR(5) restricted got punished the least; good practice to follow principle of parsimony
 - I use the arima function to determine the coefficient of AR(5) restricted 
 
 **Final model:** $(1+.3445B^5)(1-B)\log(X_t) = w_t$
