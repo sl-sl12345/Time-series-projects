@@ -30,13 +30,13 @@ Q1 1990 to Q2 2025 (142 observations)
 # Model diagnostics and forecasting
 - I can look at the diagnostics to see the robustness of my model
     - sarima function can be used to check the residuals
-    - I used Ljung-Box statistic to see if there were p values that were statistically significant in my residuals 
-          - All Ljung-Box p values were above .05
+    - I used Ljung-Box statistic to see if there were p values that were statistically significant in my residuals
+    - All Ljung-Box p values were above .05
 - I used a forecast to check how well the model would predict the last 15 quarters
     - It was able to correctly anticipate the pull down around 2023 but did not get the spike around 2025
     - It shows the limitations of AR since it cannot predict sudden surges
-          - Forecast settles into drift as the AR effect slowly fades
+    - Forecast settles into drift as the AR effect slowly fades
 - I used the root mean squared error and the mean absolute percentage error to measure how my predictions fared in comparison to naive prediction
-        - forecast RMSE and MAPE: 19.11 and 6.60%
-        - naive RMSE and MAPE: 24.83 and 8.72%
+    - forecast RMSE and MAPE: 19.11 and 6.60%
+    - naive RMSE and MAPE: 24.83 and 8.72%
 - My results were better than naive prediction
