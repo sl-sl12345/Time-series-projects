@@ -22,7 +22,7 @@ Q1 1990 to Q2 2025 (142 observations)
     - AR(5) restricted got punished the least
 - I use the arima function to determine the coefficient of ar5 
 
-**Final model:" $(1+.3445B^5)(1-B)log(X_t) = w_t$
+**Final model:** $(1+.3445B^5)(1-B)log(X_t) = w_t$
 
 # Model diagnostics and forecasting
 - I can look at the diagnostics to see the robustness of my model
