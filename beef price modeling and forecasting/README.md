@@ -20,12 +20,12 @@ Q1 1990 to Q2 2025 (142 observations)
     - auto.arima function on R recommends ARMA(5,2)
 - I use AIC to determine which model between AR(5) restricted and ARIMA(5,1,2) get penalized the least
     - AR(5) restricted got punished the least
-          - AIC(AR5_r) -375.9539
-          - AIC(ARMA52) -372.5335
-          - AIC(MA2) -359.8856
-- I use the arima function to determine the coefficient of ar5 
+          - AIC(AR5_r): -375.9539
+          - AIC(ARMA52): -372.5335
+          - AIC(MA2): -359.8856
+- I use the arima function to determine the coefficient of AR(5) restricted 
 
-**Final model:** $(1+.3445B^5)(1-B)log(X_t) = w_t$
+**Final model:** $(1+.3445B^5)(1-B)\log(X_t) = w_t$
 
 # Model diagnostics and forecasting
 - I can look at the diagnostics to see the robustness of my model
@@ -38,5 +38,5 @@ Q1 1990 to Q2 2025 (142 observations)
           - Forecast settles into drift as the AR effect slowly fades
 - I used the root mean squared error and the mean absolute percentage error to measure how my predictions fared in comparison to naive prediction
     - My results were better than naive prediction
-          - forecast RMSE and MAPE: 19.11007 and 6.600377%
-          - naive RMSE and MAPE: 24.82864 and 8.720221%
+          - forecast RMSE and MAPE: 19.11 and 6.60%
+          - naive RMSE and MAPE: 24.83 and 8.72%
