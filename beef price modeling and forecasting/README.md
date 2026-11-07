@@ -27,7 +27,7 @@ Q1 1990 to Q2 2025 (142 observations)
 
 **Final model:** $(1+.3445B^5)(1-B)\log(X_t) = w_t$
 
-# Model diagnostics and forecasting
+## Model diagnostics and forecasting
 - I can look at the diagnostics to see the robustness of my model
     - sarima function can be used to check the residuals
     - I used Ljung-Box statistic to see if there were p values that were statistically significant in my residuals
