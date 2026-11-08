@@ -41,7 +41,7 @@
     - I used ugarchspec and ugarchfit to create and fit the final model
 - $\alpha$ + $\beta$ = .997 which means that volatility is highly persistent
 
-** Final GARCH model:**  
+** Final GARCH model: **  
 $$r_t = 0.000212 + \varepsilon_t, \quad \varepsilon_t = \sigma_t z_t$$
 $$\sigma_t^2 = 0.001093 + 0.031765\\varepsilon_{t-1}^2 + 0.964977\\sigma_{t-1}^2$$
 
