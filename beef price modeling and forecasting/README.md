@@ -18,12 +18,13 @@ Q1 1990 to Q2 2025 (142 observations)
 - I can reduce the stochastic trend by differencing
     - I use ndiffs on R to determine how many times to difference by and it resulted in 1
 - The model is visually stationary and I confirm with an ADF test to determine if it is stationary, which it is
-- ACF only has one significant spike at lag 5
+- ACF and PACF only has one significant spike at lag 5
     - auto.arima function on R recommends ARMA(5,2)
-- I use AIC to determine which model between AR(5) restricted and ARIMA(5,1,2) get penalized the least; tested for MA(2) for thoroughness
+- I use AIC to determine which model between AR(5) restricted, MA(5) restricted, ARMA(5,5) restricted, and ARMA(5,2) get penalized the least
     - AIC(AR5_r): -375.9539
+    - AIC(MA1_r): -374.0754
+    - AIC(ARMA55_r): -373.9792
     - AIC(ARMA52): -372.5335
-    - AIC(MA2): -359.8856
 - AR(5) restricted got punished the least; good practice to follow principle of parsimony
 - I use the arima function to determine the coefficient of AR(5) restricted 
 
