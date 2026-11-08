@@ -43,7 +43,7 @@
 
 ** Final GARCH model:**  
 $$r_t = 0.000212 + \varepsilon_t, \quad \varepsilon_t = \sigma_t z_t$$
-$$\sigma_t^2 = 0.001093 + 0.031765\,\varepsilon_{t-1}^2 + 0.964977\,\sigma_{t-1}^2$$
+$$\sigma_t^2 = 0.001093 + 0.031765\\varepsilon_{t-1}^2 + 0.964977\\sigma_{t-1}^2$$
 
 ## Model diagnostics and forecasting
 - I run a few diagnostics to make sure that the model is sound
