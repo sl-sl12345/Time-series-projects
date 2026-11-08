@@ -3,8 +3,7 @@
 **Data:** IMF global beef price via FRED (PBEEFUSDQ), quarterly, US cents per pound,
 Q1 1990 to Q2 2025 (142 observations)
 
-## Question: What patterns drive quarterly changes in global beef prices,
-and can they be used to forecast future prices?
+## Question: What patterns drive quarterly changes in global beef prices, and can they be used to forecast future prices?
 
 ## Method
 - First plot the data
