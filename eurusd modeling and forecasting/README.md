@@ -2,7 +2,7 @@
 
 **Data:** U.S. Dollars to Euro Spot Exchange Rate via FRED (DEXUSEU), daily, Jan 4, 1999 to Oct 30, 2026 (6,979 observations omitting blanks)
 
-## Are there any predictable patterns in EURO/USD and how well can GARCH model forecast volatility?
+## Are there any predictable patterns in EUR/USD and how well can a GARCH model forecast volatility?
 
 - First plot the data
 - Look at the data and determine from eye test that it is not stationary
