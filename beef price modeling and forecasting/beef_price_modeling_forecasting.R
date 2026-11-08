@@ -53,7 +53,7 @@ ARMA55_r
 AIC(AR5_r)
 AIC(ARMA52)
 AIC(MA5_r)
-AIC(AMRA55_r)
+AIC(ARMA55_r)
 
 #use sarima to check the diagnostics
 sarima(diff_data, p=5, d=0, q=0, fixed=c(0,0,0,0,NA,0), include.mean=FALSE)
