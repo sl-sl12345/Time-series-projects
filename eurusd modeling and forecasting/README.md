@@ -34,12 +34,14 @@
          - The returns of the logged and differenced data are uncorrelated but admit a higher order dependence structure
 - I can see from the ACF and PACF that the memory of the correlation is quite long so better to use a GARCH rather than an ARCH to model volatility
     - In ARCH, the current variance would simply be a constant and a percent of the previous day’s squared returns 
-    - In GARCH, it would add the previous day’s variance into the ARCH model 
+    - In GARCH, it would add the previous day’s variance into the ARCH model
+        - $\sigma_t^2 = \omega + \alpha\, \varepsilon_{t-1}^2 + \beta\, \sigma_{t-1}^2$
 - I decide to use GARCH(1,1) as it is parsimonious and capable with just 3 parameters
     - m is past squared returns ($\alpha$)
     - s is past variance ($\beta$)
     - I used ugarchspec and ugarchfit to create and fit the final model
 - $\alpha$ + $\beta$ = .997 which means that volatility is highly persistent
+- $z_t$ is white noise, $r_t$ is the return equation (mean), and $\varepsilon_t$ is the error term
 
 **Final GARCH model:**  
 
