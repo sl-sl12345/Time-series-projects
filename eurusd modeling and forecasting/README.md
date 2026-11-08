@@ -42,6 +42,7 @@
     - I used ugarchspec and ugarchfit to create and fit the final model
 - $\alpha$ + $\beta$ = .997 which means that volatility is highly persistent
 - $z_t$ is white noise, $r_t$ is the return equation (mean), and $\varepsilon_t$ is the error term
+- $mu$ is omitted for being statistically insiginificant
 
 **Final GARCH model:**  
 
