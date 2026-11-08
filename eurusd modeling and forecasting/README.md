@@ -35,7 +35,7 @@
 - I can see from the ACF and PACF that the memory of the correlation is quite long so better to use a GARCH rather than an ARCH to model volatility
     - In ARCH, the current variance would simply be a constant and a percent of the previous day’s squared returns 
     - In GARCH, it would add the previous day’s variance into the ARCH model
-        - $\sigma_t^2 = \omega + \alpha\, \varepsilon_{t-1}^2 + \beta\, \sigma_{t-1}^2$
+        - $\sigma_t^2 = \omega + \alpha\ \varepsilon_{t-1}^2 + \beta\ \sigma_{t-1}^2$
 - I decide to use GARCH(1,1) as it is parsimonious and capable with just 3 parameters
     - m is past squared returns ($\alpha$)
     - s is past variance ($\beta$)
