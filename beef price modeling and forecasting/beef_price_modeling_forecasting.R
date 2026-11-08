@@ -47,7 +47,7 @@ ARMA55_r <- arima(diff_data, order = c(5,0,5), fixed = c(0,0,0,0,NA, 0,0,0,0,NA,
 AR5_r
 ARMA52
 MA5_r
-AMRA55_r
+ARMA55_r
 
 #check the AIC to see which model works best
 AIC(AR5_r)
