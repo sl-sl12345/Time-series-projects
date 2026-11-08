@@ -28,31 +28,34 @@
        - AIC MA(1): 12050.43
     - Constant mean of 0 will suffice to model the mean
 - Next, I want to build up the variance model
-I see that the volatility clusters in late 2000s and early 2010s
-I squared returns to see if GARCH is a good fit
-I checked the ACF and PACF of the squared returns to check if the size of the daily moves correlate over time
-The returns of the logged and differenced data are uncorrelated but admit a higher order dependence structure
-I can see from the ACF and PACF that the memory of the correlation is quite long so better to use a GARCH rather than an ARCH to model volatility
-In ARCH, the current variance would simply be a constant and a percent of the previous day’s squared returns 
-In GARCH, it would add the previous day’s variance into the ARCH model 
-I decide to use GARCH(1,1) as it is parsimonious and capable with just 3 parameters
-m is past squared returns ()
-s is past variance ()
-I used ugarchspec and ugarchfit to create and fit the final model
-Final GARCH model is 
-rt = 0.000212+r | r = tzt
-t2 = 0.001093  + 0.964977 t-12 + 0.031765 t-12
- +  = .997 which means that volatility is highly persistent
-I run a few diagnostics to make sure that the model is sound
-I start by standardizing the data of the residuals to ensure that the measurements are relative to what the model was expecting
-First, I check the ACF and PACF of the residuals of daily returns to see if there were leftover patterns in mean
-Next, I check the ACF and PACF of the residuals of daily returns squared to see if there were leftover patterns in variance
-Across both diagnostics, the resulting spikes were insignificant
-I tested the standardized residuals of daily returns squared with Ljung Box to see if there was any leftover volatility clustering
-P value of .781 so null hypothesis cannot be rejected (no significant evidence of leftover volatility clustering)
-Lastly, I used a forecast to see how well my GARCH model would predict the volatility of last 1,500 days
-I use a out of sample, rolling forecast to see how well my GARCH model can predict the daily price variance of the last 1,500 days since the data was pulled
-I use a benchmark naive prediction as a comparison
-GARCH(1,1) MSE: 0.1531671
-Naive prediction MSE: 0.1850385
-My results were better than naive prediction and reduced forecast error by 17%
+    - I see that the volatility clusters in late 2000s and early 2010s
+    - I squared returns to see if GARCH is a good fit
+         - I checked the ACF and PACF of the squared returns to check if the size of the daily moves correlate over time
+         - The returns of the logged and differenced data are uncorrelated but admit a higher order dependence structure
+- I can see from the ACF and PACF that the memory of the correlation is quite long so better to use a GARCH rather than an ARCH to model volatility
+    - In ARCH, the current variance would simply be a constant and a percent of the previous day’s squared returns 
+    - In GARCH, it would add the previous day’s variance into the ARCH model 
+- I decide to use GARCH(1,1) as it is parsimonious and capable with just 3 parameters
+    - m is past squared returns ()
+    - s is past variance ()
+    - I used ugarchspec and ugarchfit to create and fit the final model
+- $\alpha$ + $\beta$ = .997 which means that volatility is highly persistent
+
+** Final GARCH model:**  
+$$r_t = 0.000212 + \varepsilon_t, \quad \varepsilon_t = \sigma_t z_t$$
+$$\sigma_t^2 = 0.001093 + 0.031765\,\varepsilon_{t-1}^2 + 0.964977\,\sigma_{t-1}^2$$
+
+## Model diagnostics and forecasting
+- I run a few diagnostics to make sure that the model is sound
+     - I start by standardizing the data of the residuals to ensure that the measurements are relative to what the model was expecting
+     - First, I check the ACF and PACF of the residuals of daily returns to see if there were leftover patterns in mean
+     - Next, I check the ACF and PACF of the residuals of daily returns squared to see if there were leftover patterns in variance
+     - Across both diagnostics, the resulting spikes were insignificant
+- I tested the standardized residuals of daily returns squared with Ljung Box to see if there was any leftover volatility clustering
+    - P value of .781 so null hypothesis cannot be rejected (no significant evidence of leftover volatility clustering)
+- Lastly, I used a forecast to see how well my GARCH model would predict the volatility of last 1,500 days
+     - I use a out of sample, rolling forecast to see how well my GARCH model can predict the daily price variance of the last 1,500 days since the data was pulled
+     - I use a benchmark naive prediction as a comparison
+          - GARCH(1,1) MSE: 0.1531671
+          - Naive prediction MSE: 0.1850385 
+     - My results were better than naive prediction and reduced forecast error by 17%
