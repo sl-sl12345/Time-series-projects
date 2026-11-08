@@ -36,8 +36,8 @@
     - In ARCH, the current variance would simply be a constant and a percent of the previous day’s squared returns 
     - In GARCH, it would add the previous day’s variance into the ARCH model 
 - I decide to use GARCH(1,1) as it is parsimonious and capable with just 3 parameters
-    - m is past squared returns ()
-    - s is past variance ()
+    - m is past squared returns ($\alpha$)
+    - s is past variance ($\beta$)
     - I used ugarchspec and ugarchfit to create and fit the final model
 - $\alpha$ + $\beta$ = .997 which means that volatility is highly persistent
 
