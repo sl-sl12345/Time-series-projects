@@ -38,14 +38,23 @@ pacf(diff_data)
 
 #use auto.arima to see if there are alternative models
 auto.arima(diff_data)
+
 #make the models
 AR5_r <- arima(diff_data,order = c(5,0,0),fixed=c(0,0,0,0,NA,0))
 ARMA52 <- arima(diff_data,order = c(5,0,2))
-MA2 <- arima(diff_data, order = c(0,0,2))
+MA5_r <- arima(diff_data, order = c(0,0,5), fixed = c(0,0,0,0,NA,0))
+ARMA55_r <- arima(diff_data, order = c(5,0,5), fixed = c(0,0,0,0,NA, 0,0,0,0,NA, 0))
+AR5_r
+ARMA52
+MA5_r
+AMRA55_r
+
 #check the AIC to see which model works best
 AIC(AR5_r)
 AIC(ARMA52)
-AIC(MA2)
+AIC(MA5_r)
+AIC(AMRA55_r)
+
 #use sarima to check the diagnostics
 sarima(diff_data, p=5, d=0, q=0, fixed=c(0,0,0,0,NA,0), include.mean=FALSE)
 
