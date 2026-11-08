@@ -10,7 +10,7 @@ Q1 1990 to Q2 2025 (142 observations)
 - Look at the data and determine from eye test that it is not stationary
     - Mean is not constant
     - Variance is not constant
-- Use BoxCox test to determine if the variance can be lowered
+- Use BoxCox test to determine if the growing variance over time can be lowered
     - Resulting lambda was -.14 so it was close to 0
         - Logging the data is a good way to lower the variance
 - Logging the data subdues the variance just a little but still has an upward trend
